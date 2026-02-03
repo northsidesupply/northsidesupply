@@ -5,13 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Northside Supply - Representing and Growing Global Brands Online. Expert navigation of online marketplace sales on Amazon and eBay.">
     <title>Northside Supply | Representing and Growing Global Brands Online</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {margin: 0;padding: 0;box-sizing: border-box;}
+        :root {--primary-color: #1a1a1a;--accent-color: #0066cc;--text-color: #333;--light-text: #666;--border-color: #e0e0e0;--background-light: #f8f9fa;--white: #ffffff;}
+        html {scroll-behavior: smooth;}
+        body {font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;line-height: 1.6;color: var(--text-color);overflow-x: hidden;}
+        .container {max-width: 1200px;margin: 0 auto;padding: 0 20px;}
+        #navbar {position: fixed;top: 0;width: 100%;background: rgba(255, 255, 255, 0.98);backdrop-filter: blur(10px);box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);z-index: 1000;}
+        .nav-container {max-width: 1200px;margin: 0 auto;padding: 1rem 2rem;display: flex;justify-content: space-between;align-items: center;}
+        .logo {font-size: 1.5rem;font-weight: 700;color: var(--primary-color);text-decoration: none;}
+        .nav-menu {display: flex;list-style: none;gap: 2rem;}
+        .nav-link {color: var(--text-color);text-decoration: none;font-weight: 500;transition: all 0.3s;}
+        .nav-link:hover {color: var(--accent-color);}
+        .hamburger {display: none;flex-direction: column;cursor: pointer;}
+        .hamburger span {width: 25px;height: 3px;background: var(--primary-color);margin: 3px 0;}
+        .hero {height: 100vh;display: flex;align-items: center;justify-content: center;background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);color: var(--white);text-align: center;}
+        .hero h1 {font-size: 4rem;font-weight: 700;margin-bottom: 1rem;animation: fadeIn 1s;}
+        .subtitle {font-size: 1.5rem;font-weight: 300;margin-bottom: 2rem;opacity: 0.9;}
+        .cta-button {display: inline-block;padding: 1rem 2.5rem;background: var(--white);color: var(--primary-color);text-decoration: none;border-radius: 50px;font-weight: 600;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);transition: all 0.3s;}
+        .cta-button:hover {transform: translateY(-3px);box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);}
+        @keyframes fadeIn {from {opacity: 0;transform: translateY(20px);}to {opacity: 1;transform: translateY(0);}}
+        .services {padding: 100px 0;background: var(--white);}
+        .section-title {font-size: 0.9rem;letter-spacing: 3px;text-transform: uppercase;color: var(--light-text);margin-bottom: 1rem;text-align: center;}
+        .services-headline {font-size: 2.5rem;font-weight: 700;text-align: center;margin-bottom: 2rem;}
+        .services-description {max-width: 800px;margin: 0 auto;text-align: center;font-size: 1.1rem;line-height: 1.8;color: var(--light-text);}
+        .brands {padding: 100px 0;background: var(--background-light);}
+        .brand-card {display: grid;grid-template-columns: 1fr 1fr;gap: 60px;align-items: center;margin-bottom: 100px;background: var(--white);padding: 40px;border-radius: 20px;box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);transition: all 0.3s;}
+        .brand-card:hover {transform: translateY(-10px);box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);}
+        .brand-card.reverse .brand-image {order: 2;}
+        .brand-card.reverse .brand-content {order: 1;}
+        .brand-image img {width: 100%;height: auto;border-radius: 10px;}
+        .brand-name {font-size: 0.9rem;letter-spacing: 2px;text-transform: uppercase;color: var(--accent-color);margin-bottom: 1rem;font-weight: 600;}
+        .brand-description {font-size: 1.1rem;line-height: 1.8;color: var(--light-text);margin-bottom: 1.5rem;}
+        .brand-link {color: var(--accent-color);text-decoration: none;font-weight: 600;display: inline-flex;align-items: center;gap: 5px;transition: all 0.3s;}
+        .brand-link:hover {gap: 10px;color: var(--primary-color);}
+        .contact {padding: 100px 0;background: var(--white);}
+        .contact-intro {text-align: center;font-size: 1.1rem;color: var(--light-text);margin-bottom: 3rem;}
+        #contact-form {max-width: 600px;margin: 0 auto;}
+        .form-group {margin-bottom: 1.5rem;}
+        .form-group input, .form-group textarea {width: 100%;padding: 1rem;border: 2px solid var(--border-color);border-radius: 10px;font-size: 1rem;font-family: inherit;}
+        .form-group input:focus, .form-group textarea:focus {outline: none;border-color: var(--accent-color);}
+        .submit-button {width: 100%;padding: 1rem 2rem;background: var(--accent-color);color: var(--white);border: none;border-radius: 10px;font-size: 1.1rem;font-weight: 600;cursor: pointer;transition: all 0.3s;}
+        .submit-button:hover {background: var(--primary-color);transform: translateY(-2px);}
+        #form-status {margin-top: 1rem;text-align: center;font-weight: 600;}
+        .footer {background: var(--primary-color);color: var(--white);padding: 60px 0 30px;}
+        .footer-content {display: flex;justify-content: space-between;align-items: start;margin-bottom: 40px;flex-wrap: wrap;gap: 40px;}
+        .footer-links {display: flex;gap: 2rem;flex-wrap: wrap;}
+        .footer-links a {color: var(--white);text-decoration: none;opacity: 0.8;transition: all 0.3s;}
+        .footer-links a:hover {opacity: 1;}
+        .footer-social h4 {margin-bottom: 1rem;font-weight: 500;}
+        .social-link {display: inline-flex;align-items: center;gap: 10px;color: var(--white);text-decoration: none;opacity: 0.8;}
+        .social-link:hover {opacity: 1;}
+        .footer-bottom {text-align: center;padding-top: 30px;border-top: 1px solid rgba(255, 255, 255, 0.1);opacity: 0.6;}
+        @media (max-width: 768px) {
+            .hamburger {display: flex;}
+            .nav-menu {position: fixed;left: -100%;top: 70px;flex-direction: column;background: var(--white);width: 100%;text-align: center;padding: 2rem 0;transition: 0.3s;box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);}
+            .nav-menu.active {left: 0;}
+            .hero h1 {font-size: 2.5rem;}
+            .subtitle {font-size: 1.2rem;}
+            .brand-card, .brand-card.reverse {grid-template-columns: 1fr;gap: 30px;}
+            .brand-card.reverse .brand-image, .brand-card.reverse .brand-content {order: initial;}
+            .footer-content {flex-direction: column;align-items: center;text-align: center;}
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">Northside Supply</a>
@@ -22,27 +84,19 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="fade-in">Northside Supply</h1>
-            <p class="subtitle fade-in">Representing and Growing Global Brands Online</p>
+            <h1>Northside Supply</h1>
+            <p class="subtitle">Representing and Growing Global Brands Online</p>
             <a href="#services" class="cta-button">Learn More</a>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">SERVICES</h2>
@@ -58,14 +112,11 @@
         </div>
     </section>
 
-    <!-- Brands Section -->
     <section id="brands" class="brands">
         <div class="container">
-            
-            <!-- SKÖG Tools -->
             <div class="brand-card">
                 <div class="brand-image">
-                    <img src="images/skog-tools.png" alt="SKÖG Tools Chuck Mate">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5dc96cf0febde92fe20b5933/31512b1f-cd11-4901-9817-10df22d59d41/CM+MAIN+ZILLA+3+10+22.png" alt="SKÖG Tools">
                 </div>
                 <div class="brand-content">
                     <h3 class="brand-name">SKÖG TOOLS</h3>
@@ -75,14 +126,13 @@
                         automating the chore of airing down tires on the trailhead.
                     </p>
                     <a href="https://www.amazon.com/stores/WAXAW+Industrial/page/72356333-7D90-4A3A-9F4A-4A0DCE92AAEF" 
-                       class="brand-link" target="_blank" rel="noopener">Learn more →</a>
+                       class="brand-link" target="_blank">Learn more →</a>
                 </div>
             </div>
 
-            <!-- Staun Tyre Deflators -->
             <div class="brand-card reverse">
                 <div class="brand-image">
-                    <img src="images/staun.jpg" alt="Staun Tyre Deflators">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5dc96cf0febde92fe20b5933/1616086409339-ST1JBRO7CUK0DCXVXF9F/Staun+square+for+Nortside+Website.jpg" alt="Staun">
                 </div>
                 <div class="brand-content">
                     <h3 class="brand-name">STAUN TYRE DEFLATORS</h3>
@@ -91,14 +141,13 @@
                         pressure, a common task for those driving off-road to improve traction and smooth out 
                         the ride. The easiest way to air down tires.
                     </p>
-                    <a href="https://staun.us/" class="brand-link" target="_blank" rel="noopener">Learn more →</a>
+                    <a href="https://staun.us/" class="brand-link" target="_blank">Learn more →</a>
                 </div>
             </div>
 
-            <!-- Stellar Solutions -->
             <div class="brand-card">
                 <div class="brand-image">
-                    <img src="images/stellar.png" alt="Stellar Solutions CitriSurf">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5dc96cf0febde92fe20b5933/5e5bf3fd-59d2-4daf-ad79-bda1f81fbb02/77+Plus+Main+Image+Citrisurf+05NOV24+G2+with+hand.png" alt="Stellar Solutions">
                 </div>
                 <div class="brand-content">
                     <h3 class="brand-name">STELLAR SOLUTIONS</h3>
@@ -107,20 +156,16 @@
                         for cleaning and care of stainless steel. CitriSurf®: citric acid based cleaning and 
                         passivation solutions that replace the old nitric acid methods.
                     </p>
-                    <a href="http://citrisurf.com/" class="brand-link" target="_blank" rel="noopener">Learn more →</a>
+                    <a href="http://citrisurf.com/" class="brand-link" target="_blank">Learn more →</a>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Contact Form</h2>
-            <p class="contact-intro">
-                Please feel free to contact via the below form. We look forward to hearing from you:
-            </p>
+            <p class="contact-intro">Please feel free to contact via the below form. We look forward to hearing from you:</p>
             
             <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-group">
@@ -142,7 +187,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -155,7 +199,7 @@
                 <div class="footer-social">
                     <h4>Questions? We want to hear from you!</h4>
                     <a href="https://www.facebook.com/Northside-Supply-445345598938993" 
-                       target="_blank" rel="noopener" class="social-link">
+                       target="_blank" class="social-link">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
@@ -169,6 +213,44 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) {
+                    window.scrollTo({top: t.offsetTop - 70, behavior: 'smooth'});
+                    document.querySelector('.nav-menu').classList.remove('active');
+                }
+            });
+        });
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const status = document.getElementById('form-status');
+            try {
+                const response = await fetch(e.target.action, {
+                    method: 'POST',
+                    body: new FormData(e.target),
+                    headers: {'Accept': 'application/json'}
+                });
+                if (response.ok) {
+                    status.innerHTML = '<p style="color: green;">Thank you! Your message has been sent.</p>';
+                    e.target.reset();
+                } else {
+                    throw new Error('Failed');
+                }
+            } catch (error) {
+                status.innerHTML = '<p style="color: red;">Oops! Please try again.</p>';
+            }
+        });
+    </script>
 </body>
 </html>
