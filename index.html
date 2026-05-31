@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.hgstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         * {margin: 0;padding: 0;box-sizing: border-box;}
         :root {--primary-color: #1a1a1a;--accent-color: #0066cc;--text-color: #333;--light-text: #666;--border-color: #e0e0e0;--background-light: #f8f9fa;--white: #ffffff;}
@@ -23,22 +23,19 @@
         .nav-link:hover {color: var(--accent-color);}
         .hamburger {display: none;flex-direction: column;cursor: pointer;}
         .hamburger span {width: 25px;height: 3px;background: var(--primary-color);margin: 3px 0;}
-        .hero {height: 100vh;display: flex;align-items: center;justify-content: center;background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);color: var(--white);text-align: center;}
-        .hero h1 {font-size: 4rem;font-weight: 700;margin-bottom: 1rem;animation: fadeIn 1s;}
-        .subtitle {font-size: 1.5rem;font-weight: 300;margin-bottom: 2rem;opacity: 0.9;}
-        .cta-button {display: inline-block;padding: 1rem 2.5rem;background: var(--white);color: var(--primary-color);text-decoration: none;border-radius: 50px;font-weight: 600;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);transition: all 0.3s;}
-        .cta-button:hover {transform: translateY(-3px);box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);}
-        @keyframes fadeIn {from {opacity: 0;transform: translateY(20px);}to {opacity: 1;transform: translateY(0);}}
+        .hero {padding-top: 70px;}
+        .hero-banner {width: 100%;display: block;height: auto;}
         .services {padding: 100px 0;background: var(--white);}
         .section-title {font-size: 0.9rem;letter-spacing: 3px;text-transform: uppercase;color: var(--light-text);margin-bottom: 1rem;text-align: center;}
         .services-headline {font-size: 2.5rem;font-weight: 700;text-align: center;margin-bottom: 2rem;}
         .services-description {max-width: 800px;margin: 0 auto;text-align: center;font-size: 1.1rem;line-height: 1.8;color: var(--light-text);}
         .brands {padding: 100px 0;background: var(--background-light);}
-        .brand-card {display: grid;grid-template-columns: 1fr 1fr;gap: 60px;align-items: center;margin-bottom: 100px;background: var(--white);padding: 40px;border-radius: 20px;box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);transition: all 0.3s;}
+        .brand-card {display: grid;grid-template-columns: 1fr 1fr;gap: 60px;align-items: center;margin-bottom: 80px;background: var(--white);padding: 40px;border-radius: 20px;box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);transition: all 0.3s;}
         .brand-card:hover {transform: translateY(-10px);box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);}
-        .brand-card.reverse .brand-image {order: 2;}
+        .brand-card.reverse .brand-logo {order: 2;}
         .brand-card.reverse .brand-content {order: 1;}
-        .brand-image img {width: 100%;height: auto;border-radius: 10px;}
+        .brand-logo {display: flex;align-items: center;justify-content: center;padding: 20px;}
+        .brand-logo img {max-width: 100%;max-height: 220px;width: auto;height: auto;object-fit: contain;}
         .brand-name {font-size: 0.9rem;letter-spacing: 2px;text-transform: uppercase;color: var(--accent-color);margin-bottom: 1rem;font-weight: 600;}
         .brand-description {font-size: 1.1rem;line-height: 1.8;color: var(--light-text);margin-bottom: 1.5rem;}
         .brand-link {color: var(--accent-color);text-decoration: none;font-weight: 600;display: inline-flex;align-items: center;gap: 5px;transition: all 0.3s;}
@@ -65,10 +62,8 @@
             .hamburger {display: flex;}
             .nav-menu {position: fixed;left: -100%;top: 70px;flex-direction: column;background: var(--white);width: 100%;text-align: center;padding: 2rem 0;transition: 0.3s;box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);}
             .nav-menu.active {left: 0;}
-            .hero h1 {font-size: 2.5rem;}
-            .subtitle {font-size: 1.2rem;}
             .brand-card, .brand-card.reverse {grid-template-columns: 1fr;gap: 30px;}
-            .brand-card.reverse .brand-image, .brand-card.reverse .brand-content {order: initial;}
+            .brand-card.reverse .brand-logo, .brand-card.reverse .brand-content {order: initial;}
             .footer-content {flex-direction: column;align-items: center;text-align: center;}
         }
     </style>
@@ -90,11 +85,7 @@
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Northside Supply</h1>
-            <p class="subtitle">Representing and Growing Global Brands Online</p>
-            <a href="#services" class="cta-button">Learn More</a>
-        </div>
+        <img src="images/banner.jpg" alt="Northside Supply" class="hero-banner">
     </section>
 
     <section id="services" class="services">
@@ -102,11 +93,11 @@
             <h2 class="section-title">SERVICES</h2>
             <h3 class="services-headline">Representing and Growing Global Brands Online</h3>
             <p class="services-description">
-                Our team of veteran experts navigate the growing and challenging space of online sales, 
-                particularly on marketplace facilitators such as Amazon.com and eBay.com. The marketplace 
-                facilitator space continues to grow more crowded by the day and is increasingly complex. 
-                With over a decade of experience, our team has grown with the system and therefore is 
-                intimately aware how to navigate. Leverage our experience and skip the painful learning curve. 
+                Our team of veteran experts navigate the growing and challenging space of online sales,
+                particularly on marketplace facilitators such as Amazon.com and eBay.com. The marketplace
+                facilitator space continues to grow more crowded by the day and is increasingly complex.
+                With over a decade of experience, our team has grown with the system and therefore is
+                intimately aware how to navigate. Leverage our experience and skip the painful learning curve.
                 Contact us today!
             </p>
         </div>
@@ -114,51 +105,93 @@
 
     <section id="brands" class="brands">
         <div class="container">
+
             <div class="brand-card">
-                <div class="brand-image">
-                    <img src="https://images.squarespace-cdn.com/content/v1/5dc96cf0febde92fe20b5933/31512b1f-cd11-4901-9817-10df22d59d41/CM+MAIN+ZILLA+3+10+22.png" alt="SKÖG Tools">
+                <div class="brand-logo">
+                    <img src="images/skog-logo.png" alt="SKÖG Tools">
                 </div>
                 <div class="brand-content">
                     <h3 class="brand-name">SKÖG TOOLS</h3>
                     <p class="brand-description">
-                        Launched in 2022 with its first tool, the Chuck Mate speed clips as a complementary 
-                        tool to those using automatic tire deflators. Adds another layer of convenience to 
-                        automating the chore of airing down tires on the trailhead.
+                        SKÖG is a tools brand purpose-built for off-road enthusiasts. Launched in 2022, SKÖG
+                        develops accessories designed to automate and simplify the repetitive tasks that come
+                        with driving off-road. Compact, practical, and built with the overlander in mind,
+                        every SKÖG product is engineered to add speed and convenience where it matters
+                        most — at the trailhead.
                     </p>
-                    <a href="https://www.amazon.com/stores/WAXAW+Industrial/page/72356333-7D90-4A3A-9F4A-4A0DCE92AAEF" 
+                    <a href="https://www.amazon.com/stores/WAXAW+Industrial/page/72356333-7D90-4A3A-9F4A-4A0DCE92AAEF"
                        class="brand-link" target="_blank">Learn more →</a>
                 </div>
             </div>
 
             <div class="brand-card reverse">
-                <div class="brand-image">
-                    <img src="https://images.squarespace-cdn.com/content/v1/5dc96cf0febde92fe20b5933/1616086409339-ST1JBRO7CUK0DCXVXF9F/Staun+square+for+Nortside+Website.jpg" alt="Staun">
+                <div class="brand-logo">
+                    <img src="images/chuck-mates-logo.png" alt="Chuck Mates">
+                </div>
+                <div class="brand-content">
+                    <h3 class="brand-name">CHUCK MATES</h3>
+                    <p class="brand-description">
+                        Chuck Mates speed clips are a purpose-built companion to automatic tire deflators,
+                        adding another layer of convenience to the chore of airing down tires at the trailhead.
+                        The first product launched under the SKÖG brand, Chuck Mates are designed to make
+                        the air-down process faster and more hands-free — so you spend less time at the
+                        valve stem and more time on the trail.
+                    </p>
+                    <a href="https://www.amazon.com/stores/WAXAW+Industrial/page/72356333-7D90-4A3A-9F4A-4A0DCE92AAEF"
+                       class="brand-link" target="_blank">Learn more →</a>
+                </div>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="images/staun-logo.png" alt="Staun Tyre Deflators">
                 </div>
                 <div class="brand-content">
                     <h3 class="brand-name">STAUN TYRE DEFLATORS</h3>
                     <p class="brand-description">
-                        The Australian Original, Staun Tyre Deflators automatically airs down tires to a preset 
-                        pressure, a common task for those driving off-road to improve traction and smooth out 
-                        the ride. The easiest way to air down tires.
+                        Staun Tyre Deflators is The Australian Original — the brand that pioneered automatic
+                        tire deflation for off-road drivers worldwide. Staun deflators automatically air down
+                        tires to a preset pressure, a critical step before hitting the dirt for improved traction
+                        and a smoother ride. Easy to set and effortless to use — just clip on and walk away
+                        while Staun does the work. Trusted by off-road clubs and four-wheel drive enthusiasts
+                        across the globe.
                     </p>
                     <a href="https://staun.us/" class="brand-link" target="_blank">Learn more →</a>
                 </div>
             </div>
 
+            <div class="brand-card reverse">
+                <div class="brand-logo">
+                    <img src="images/magica-logo.png" alt="Magica Rust Remover">
+                </div>
+                <div class="brand-content">
+                    <h3 class="brand-name">MAGICA</h3>
+                    <p class="brand-description">
+                        Magica has been removing rust stains safely and effectively for over 35 years.
+                        Based in Oshkosh, Wisconsin, Magica produces spray and gel formulations that dissolve
+                        rust on contact — no scrubbing, no harsh acids required. Safe for use on fabrics,
+                        upholstery, marine surfaces, vehicles, and more, Magica is trusted by boat owners,
+                        auto detailers, dry cleaners, and homeowners alike.
+                    </p>
+                    <a href="https://magicarustremover.com/" class="brand-link" target="_blank">Learn more →</a>
+                </div>
+            </div>
+
             <div class="brand-card">
-                <div class="brand-image">
-                    <img src="https://images.squarespace-cdn.com/content/v1/5dc96cf0febde92fe20b5933/5e5bf3fd-59d2-4daf-ad79-bda1f81fbb02/77+Plus+Main+Image+Citrisurf+05NOV24+G2+with+hand.png" alt="Stellar Solutions">
+                <div class="brand-logo">
+                    <img src="images/citrisurf-logo.png" alt="CitriSurf by Stellar Solutions">
                 </div>
                 <div class="brand-content">
                     <h3 class="brand-name">STELLAR SOLUTIONS</h3>
                     <p class="brand-description">
-                        A worldwide leader in citric acid passivation solutions and other low-hazard products 
-                        for cleaning and care of stainless steel. CitriSurf®: citric acid based cleaning and 
+                        A worldwide leader in citric acid passivation solutions and other low-hazard products
+                        for cleaning and care of stainless steel. CitriSurf®: citric acid based cleaning and
                         passivation solutions that replace the old nitric acid methods.
                     </p>
                     <a href="http://citrisurf.com/" class="brand-link" target="_blank">Learn more →</a>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -166,7 +199,7 @@
         <div class="container">
             <h2 class="section-title">Contact Form</h2>
             <p class="contact-intro">Please feel free to contact via the below form. We look forward to hearing from you:</p>
-            
+
             <form id="contact-form" action="https://formspree.io/f/xzdwqyqz" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Name *" required>
@@ -182,7 +215,7 @@
                 </div>
                 <button type="submit" class="submit-button">Send Message</button>
             </form>
-            
+
             <div id="form-status"></div>
         </div>
     </section>
@@ -198,7 +231,7 @@
                 </div>
                 <div class="footer-social">
                     <h4>Questions? We want to hear from you!</h4>
-                    <a href="https://www.facebook.com/Northside-Supply-445345598938993" 
+                    <a href="https://www.facebook.com/Northside-Supply-445345598938993"
                        target="_blank" class="social-link">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -208,7 +241,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Northside Supply. All rights reserved.</p>
+                <p>&copy; 2026 Northside Supply. All rights reserved.</p>
             </div>
         </div>
     </footer>
