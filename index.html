@@ -62,9 +62,25 @@
             .hamburger {display: flex;}
             .nav-menu {position: fixed;left: -100%;top: 70px;flex-direction: column;background: var(--white);width: 100%;text-align: center;padding: 2rem 0;transition: 0.3s;box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);}
             .nav-menu.active {left: 0;}
-            .brand-card, .brand-card.reverse {grid-template-columns: 1fr;gap: 30px;}
+            .hero-banner {height: 220px;object-fit: cover;object-position: center center;}
+            .services {padding: 60px 0;}
+            .services-headline {font-size: 1.8rem;}
+            .services-description {font-size: 1rem;}
+            .brands {padding: 60px 0;}
+            .brand-card, .brand-card.reverse {grid-template-columns: 1fr;gap: 20px;padding: 25px;margin-bottom: 40px;}
             .brand-card.reverse .brand-logo, .brand-card.reverse .brand-content {order: initial;}
+            .brand-logo {padding: 10px;}
+            .brand-logo img {max-height: 150px;}
+            .contact {padding: 60px 0;}
             .footer-content {flex-direction: column;align-items: center;text-align: center;}
+        }
+        @media (max-width: 480px) {
+            .hero-banner {height: 180px;}
+            .services-headline {font-size: 1.4rem;}
+            .brand-card, .brand-card.reverse {padding: 20px;gap: 15px;margin-bottom: 30px;}
+            .brand-logo img {max-height: 120px;}
+            .brand-description {font-size: 1rem;}
+            .brand-name {font-size: 0.8rem;}
         }
     </style>
 </head>
